@@ -32,7 +32,7 @@ export function renderOrederSummary() {
 
     const matchingProduct = getProduct(productId);
 
-    const deliveryOptionId = cartItem.deliverOptionId;
+    const deliveryOptionId = cartItem.deliveryOptionId;
 
     let deliveryOption = getDeliveryOption(deliveryOptionId);
 

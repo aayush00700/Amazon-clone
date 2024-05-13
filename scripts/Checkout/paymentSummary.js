@@ -12,7 +12,7 @@ export function renderPaymentSummary () {
 
         productPriceCents += product.priceCents * cartItem.quantity;
 
-        const deliveryOption = getDeliveryOption(cartItem.deliverOptionId);
+        const deliveryOption = getDeliveryOption(cartItem.deliveryOptionId);
 
         shippingPriceCents += deliveryOption.priceCents;
 
