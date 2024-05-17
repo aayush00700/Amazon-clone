@@ -18,14 +18,14 @@ products.forEach((product) => {
 
             <div class="product-rating-container">
             <img class="product-rating-stars"
-                src="images/ratings/rating-${product.rating.stars * 10}.png">
+                src="${product.getStarsUrl()}">
             <div class="product-rating-count link-primary">
                 ${product.rating.count}
             </div>
             </div>
 
             <div class="product-price">
-                $${formatCurrency(product.priceCents)}
+                $${product.getPrice()}
             </div>
 
             <div class="product-quantity-container">
@@ -42,6 +42,8 @@ products.forEach((product) => {
                 <option value="10">10</option>
             </select>
             </div>
+
+            ${product.extraInfoHTML()}
 
             <div class="product-spacer"></div>
 
@@ -70,7 +72,6 @@ document.querySelectorAll('.js-add-to-cart').forEach((button) => {
   let addedMessageTimeoutId;
 
   button.addEventListener('click', () => {
-    // const productId = button.dataset.productId;
     const {productId} = button.dataset;
 
     addToCart(productId);
