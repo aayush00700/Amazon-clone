@@ -79,13 +79,39 @@ class Appliances extends Product {
   }
 }
 
+// export let products = [];
+
+// export function loadProductsFetch(fun) {
+//   fetch('https://supersimplebackend.dev/products')
+//   .then((response) => {
+//     return response.json();
+//   })
+//   .then((productsData) => {
+//     products = productsData.map((productDetails) => {
+//       if (productDetails.type === 'clothing') {
+//         return new Clothing(productDetails);
+//       }
+//       if(productDetails.type === 'appliances') {
+//         return new Appliances(productDetails);
+//       }
+//       return new Product(productDetails);
+//     });
+
+//     console.log('load products');
+//     fun();
+//   }).catch((error) => {
+//     console.log('Unexpected error. Please try again later.');
+//   });
+
+// }
+
 export const products = [
   {
-    id: "e43638ce-6aa0-4b85-b27f-e1d07eb678c6",
-    image: "images/products/athletic-cotton-socks-6-pairs.jpg",
-    name: "Black and Gray Athletic Cotton Socks - 6 Pairs",
-    rating: {
-      stars: 4.5,
+      id: "e43638ce-6aa0-4b85-b27f-e1d07eb678c6",
+      image: "images/products/athletic-cotton-socks-6-pairs.jpg",
+      name: "Black and Gray Athletic Cotton Socks - 6 Pairs",
+      rating: {
+          stars: 4.5,
       count: 87
     },
     priceCents: 1090,
