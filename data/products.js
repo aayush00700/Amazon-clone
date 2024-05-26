@@ -79,15 +79,15 @@ class Appliances extends Product {
   }
 }
 
-// export let products = [];
+// export let productsArr= [];
 
-// export function loadProductsFetch(fun) {
-//   fetch('https://supersimplebackend.dev/products')
+// export function loadProductsFetch() {
+//   const promise = fetch('https://supersimplebackend.dev/products')
 //   .then((response) => {
 //     return response.json();
 //   })
 //   .then((productsData) => {
-//     products = productsData.map((productDetails) => {
+//     productsArr = productsData.map((productDetails) => {
 //       if (productDetails.type === 'clothing') {
 //         return new Clothing(productDetails);
 //       }
@@ -98,11 +98,11 @@ class Appliances extends Product {
 //     });
 
 //     console.log('load products');
-//     fun();
 //   }).catch((error) => {
-//     console.log('Unexpected error. Please try again later.');
+//     console.log('Unexpected error. Please try again later.' + error.message);
 //   });
 
+//   return promise;
 // }
 
 export const products = [
