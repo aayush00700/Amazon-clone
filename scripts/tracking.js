@@ -1,8 +1,9 @@
 import {getOrder} from '../data/orders.js';
-import {getProduct} from '../data/products.js';
+import {getProduct, loadProductsFetch} from '../data/products.js';
 import dayjs from 'https://unpkg.com/dayjs@1.11.10/esm/index.js';
 
 async function loadPage() {
+  await loadProductsFetch();
 
   const url = new URL(window.location.href);
   const orderId = url.searchParams.get('orderId');
