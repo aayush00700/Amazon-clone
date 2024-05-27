@@ -133,7 +133,7 @@ async function renderProductsGrid() {
   // Extra feature: searching by pressing 'Enter' on the search
   document.querySelector('.js-search-input').addEventListener('keydown', (e) => {
     if(e.key === 'Enter') {
-      const searchTerm = document.querySelector('.js-search-bar').value;
+      const searchTerm = document.querySelector('.js-search-input').value;
       window.location.href = `amazon.html?search=${searchTerm}`;
     }
   });
