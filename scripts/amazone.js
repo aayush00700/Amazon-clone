@@ -1,4 +1,4 @@
-import { addToCart, calculateCartQuantity } from "../data/cart.js";
+import { addToCart, calculateCartQuantity, cart } from "../data/cart.js";
 import { products, loadProductsFetch } from "../data/products.js";
 
 // import { products } from "../data/products.js";
@@ -10,13 +10,13 @@ async function renderProductsGrid() {
   let productsHTML = "";
 
   const url = new URL(window.location.href);
-  const search = url.searchParams.get('search');
+  const search = url.searchParams.get("search");
 
   let filterProducts = products;
 
   // If a search exists in the URL parameters,
   // filter the products that matches the search.
-  if(search) {
+  if (search) {
     filterProducts = products.filter((product) => {
       let matchingKewords = false;
 
@@ -26,7 +26,10 @@ async function renderProductsGrid() {
         }
       });
 
-      return matchingKewords || product.name.toLowerCase().includes(search.toLowerCase());
+      return (
+        matchingKewords ||
+        product.name.toLowerCase().includes(search.toLowerCase())
+      );
     });
   }
 
@@ -124,17 +127,18 @@ async function renderProductsGrid() {
     });
   });
 
-  document.querySelector('.js-search-button')
-  .addEventListener('click', () => {
-    const search = document.querySelector('.js-search-input').value;
+  document.querySelector(".js-search-button").addEventListener("click", () => {
+    const search = document.querySelector(".js-search-input").value;
     window.location.href = `amazon.html?search=${search}`;
   });
 
   // Extra feature: searching by pressing 'Enter' on the search
-  document.querySelector('.js-search-input').addEventListener('keydown', (e) => {
-    if(e.key === 'Enter') {
-      const searchTerm = document.querySelector('.js-search-input').value;
-      window.location.href = `amazon.html?search=${searchTerm}`;
-    }
-  });
+  document
+    .querySelector(".js-search-input")
+    .addEventListener("keydown", (e) => {
+      if (e.key === "Enter") {
+        const searchTerm = document.querySelector(".js-search-input").value;
+        window.location.href = `amazon.html?search=${searchTerm}`;
+      }
+    });
 }

@@ -19,9 +19,11 @@ function saveToStorage() {
 export function addToCart(productId) {
   let matchingItem;
 
-  let quantity = Number(
-    document.querySelector(`.js-quantity-selector-${productId}`).value
+  const quantitySelector = document.querySelector(
+    `.js-quantity-selector-${productId}`
   );
+  const quantity = Number(quantitySelector.value);
+
 
   cart.forEach((item) => {
     if (productId === item.productId) {
