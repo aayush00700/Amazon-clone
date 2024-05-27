@@ -97,3 +97,9 @@ export async function loadCartFetch() {
   const text = await response.text();
   return text;
 }
+
+// Extra features: make the cart empty after creatingf an order
+export function resetCart() {
+  cart = [];
+  saveToStorage();
+}
